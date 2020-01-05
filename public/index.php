@@ -3,6 +3,7 @@ include_once "../assets/html/bootstrap.html";
 if(!isset($_SESSION))
 {
     session_start();
+    $_SESSION["NumOfItems"]=0;
     echo '<script>console.log("Session started")</script>';
 }
 ?>
@@ -16,7 +17,7 @@ if(!isset($_SESSION))
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
     <div class="buttons">
-        <a class="btn btn-secondary" id="1" href="drinks/drinksmenu.php" role="button">Drinks Menu</a>
+        <a class="btn btn-secondary" id="1" href="../src/model/drinksmenu.php" role="button">Drinks Menu</a>
         <a class="btn btn-secondary" id="2" href="#" role="button">Snacks Menu</a>
     </div>
 </div>
