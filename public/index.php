@@ -1,5 +1,6 @@
 <?php
 include_once "../assets/html/bootstrap.html";
+include_once "includes/navbar.php";
 if(!isset($_SESSION))
 {
     session_start();
@@ -17,7 +18,7 @@ if(!isset($_SESSION))
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
     <div class="buttons">
-        <a class="btn btn-secondary" id="1" href="../src/model/drinksmenu.php" role="button">Drinks Menu</a>
+        <a class="btn btn-secondary" id="1" href="../src/view/drinksmenu.php" role="button">Drinks Menu</a>
         <a class="btn btn-secondary" id="2" href="#" role="button">Snacks Menu</a>
     </div>
 </div>
