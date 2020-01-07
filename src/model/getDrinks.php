@@ -6,8 +6,9 @@ class MenuItem
     private $name;
     private $description;
     private $quantity;
+    private $price;
 
-    public function __construct($ID, $NAME, $DESC, $QUANT) {
+    public function __construct($ID, $NAME, $DESC, $QUANT, $PRICE) {
         $this->ID = $ID;
         $this->name = $NAME;
         $this->description = $DESC;
@@ -28,6 +29,10 @@ class MenuItem
 
     public function Quant() {
         return $this->quantity;
+    }
+
+    public function Price() {
+        return $this->price;
     }
 
 
