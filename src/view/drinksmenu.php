@@ -1,6 +1,7 @@
 <?php
 include_once "../../public/includes/session.php";
 include_once "../../assets/html/bootstrap.html";
+include_once '../../public/includes/navbar.php';
 include_once "../../public/includes/sidebar.php";
 
 
@@ -12,7 +13,7 @@ include_once "../../public/includes/sidebar.php";
 <?php
 include_once '../model/getDrinks.php';
 include_once '../model/DbContext.php';
-include_once '../../public/includes/navbar.php';
+
 
     $optionString = "";
 
@@ -20,8 +21,8 @@ include_once '../../public/includes/navbar.php';
     $items = $db->getInfo();
     $total = 0;
     $itemCount = 0;
+    $test = $_SESSION['test'];
 
-    echo "<pre>", print_r($_SESSION['cart'], true), "</pre>";
     //$num = count($_SESSION['cart']);
     //echo "In Cart:  $num";
 

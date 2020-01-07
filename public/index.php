@@ -1,20 +1,24 @@
 <?php
-include_once "../assets/html/bootstrap.html";
-include_once "includes/navbar.php";
 if(!isset($_SESSION))
 {
     session_start();
-    $_SESSION["NumOfItems"]=0;
+
     echo '<script>console.log("Session started")</script>';
 }
+
+include_once "../public/includes/session.php";
+include_once "../assets/html/bootstrap.html";
+include_once "includes/navbar.php";
 ?>
 
 <link rel="stylesheet" href="../assets/css/background.css">
 <link rel="stylesheet" href="../assets/css/landing.css">
 
+<!--
 <nav class="navbar fixed-top navbar-light bg-light">
   <a class="navbar-brand" href="#">Fixed top</a>
 </nav>
+-->
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
     <div class="buttons">

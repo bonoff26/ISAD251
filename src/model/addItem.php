@@ -10,7 +10,7 @@ $var = $_POST["action_button"];
 add_to_cart($var);
 
 
-
+//echo '<script>window.location="../view/drinksmenu.php"</script>';
 
 //var_dump($_SESSION["cart"]);
 //array_push($_SESSION["Cart"], $var);
