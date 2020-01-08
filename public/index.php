@@ -1,11 +1,4 @@
 <?php
-if(!isset($_SESSION))
-{
-    session_start();
-
-    echo '<script>console.log("Session started")</script>';
-}
-
 include_once "../public/includes/session.php";
 include_once "../assets/html/bootstrap.html";
 include_once "includes/navbar.php";

@@ -44,7 +44,6 @@ class DbContext
             {
                 $menuitem = new MenuItem($row['MenuItemID'], $row['Name'], $row['Description'], $row['Quantity'], $row['Price']);
                 $menuitems[] = $menuitem;
-                $_SESSION['NumOfItems'] = $_SESSION['NumOfItems'] + 1;
             }
         }
 

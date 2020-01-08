@@ -1,5 +1,5 @@
 <?php
-include_once "../../public/includes/session.php";
+include "../../public/includes/session.php";
 include_once "../../assets/html/bootstrap.html";
 include_once '../../public/includes/navbar.php';
 include_once "../../public/includes/sidebar.php";
@@ -13,7 +13,7 @@ include_once "../../public/includes/sidebar.php";
 <?php
 include_once '../model/getDrinks.php';
 include_once '../model/DbContext.php';
-
+print_r($_SESSION);
 
     $optionString = "";
 
@@ -21,14 +21,14 @@ include_once '../model/DbContext.php';
     $items = $db->getInfo();
     $total = 0;
     $itemCount = 0;
-    $test = $_SESSION['test'];
+    //$test = $_SESSION['test'];
 
     //$num = count($_SESSION['cart']);
     //echo "In Cart:  $num";
 
     if($items) {
         foreach($items as $item) {
-            $_SESSION['TakeAction'] = $item->ID();
+            //$_SESSION['TakeAction'] = $item->ID();
             $optionString = "";
             $optionString .= "<option value=".$item->ID().">".$item->Name().">".$item->Quant().">".$item->Desc().">".$item->Price()."</option>";
             if ($item->Quant() > 0) {
