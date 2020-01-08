@@ -50,5 +50,17 @@ class DbContext
         return $menuitems;
 
     }
+
+    public function checkDB($array) {
+        $items = $this->getInfo();
+        $newArray = array_keys($array);
+        $values = array_values($array);
+        for ($i = 0; $i < count($newArray); $i++) {
+            if ($items[$i]->Quant() - $values[$i] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 

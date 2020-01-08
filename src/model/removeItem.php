@@ -4,12 +4,12 @@ header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 
 
-function add_to_cart ($product_id) {
-    $_SESSION['cart'][$product_id]++;
+function remove_from_cart ($product_id) {
+    $_SESSION['cart'][$product_id]--;
 }
 
-$var = $_POST["action_button"];
-add_to_cart($var);
+$var = $_POST["remove_button"];
+remove_from_cart($var);
 
 
 //echo '<script>window.location="../view/drinksmenu.php"</script>';
