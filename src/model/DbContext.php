@@ -42,7 +42,7 @@ class DbContext
         if ($results) {
             foreach($results as $row)
             {
-                $menuitem = new MenuItem($row['MenuItemID'], $row['Name'], $row['Description'], $row['Quantity'], $row['Price']);
+                $menuitem = new Item($row['MenuItemID'], $row['Name'], $row['Description'], $row['Quantity'], $row['Price']);
                 $menuitems[] = $menuitem;
             }
         }
