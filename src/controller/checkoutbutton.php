@@ -2,10 +2,10 @@
 //include_once '../model/cartpage.php';
 
 
-class ButtonController {
+class CheckoutButton {
 
     function ShowButton() {
-        echo "<a class='btn btn-secondary' href='checkout.php' role='button'>Checkout</a>";
+        echo "<a class='btn btn-secondary' href='../model/checkout.php' role='button'>Checkout</a>";
     }
 
 

@@ -41,12 +41,13 @@ class SnacksController {
                 //$_SESSION['TakeAction'] = $item->ID();
 
                 if ($newData['records'][$i]['Quantity'] > 0 && $newData['records'][$i]['Type'] == "f") {
+                    echo "<div style='padding-left: 1%; padding-top: 1%;'>";
                     echo "<div class='card' style='width: 18rem;'>";
 
                     echo"<div class='card-body''>";
                     echo"<h5 class='card-title'>"; echo $newData['records'][$i]['Name']; echo "</h5>";
                     echo"<p class='card-text'>"; echo $newData['records'][$i]['Description']; echo "</p>";
-                    $id = $item->ID();
+                    $id = $newData['records'][$i]['MenuItemID'];
                     echo "<form action='../model/addItem.php' method='post'>";
 
                     echo "<button name='action_button' class='btn btn-primary' type='submit' value='$id'>Add to cart</button>";
@@ -54,15 +55,18 @@ class SnacksController {
                     echo "</form>";
                     echo"</div>";
                     echo"</div>";
+                    echo"</div>";
                 }
 
                 else if ($newData['records'][$i]['Quantity'] <= 0 && $newData['records'][$i]['Type'] == 'f'){
+                    echo "<div style='padding-left: 1%; padding-top: 1%;'>";
                     echo "<div class='card' style='width: 18rem;'>";
 
                     echo"<div class='card-body''>";
                     echo"<h5 class='card-title'>"; echo $newData['records'][$i]['Name']; echo "</h5>";
                     echo"<p class='card-text'>"; echo $newData['records'][$i]['Description']; echo "</p>";
-                    echo"<a href='#' class='btn btn-danger'>Out of stock</a>";
+                    echo"<a href='' class='btn btn-danger'>Out of stock</a>";
+                    echo"</div>";
                     echo"</div>";
                     echo"</div>";
 

@@ -8,9 +8,9 @@ include_once '../controller/cartpage.php';
 $controller = new CartPageController();
 $controller->showItems();
 
-echo "<div>";
+echo "<div style='padding-left: 2%; padding-top: 2%;'>";
 echo "<form action='../view/drinksmenu.php' method='post'>";
-echo "<button name='remove_button' class='btn btn-danger' type='submit'>Back</button>";
+echo "<button name='remove_button' class='btn btn-danger'  type='submit'>Back</button>";
 echo "</form>";
 echo "</div>";
 

@@ -10,6 +10,7 @@ $controller = new NavController();
 
 $var = $controller->getCartController();
 echo "<a class='navbar-brand' href='#'>Your Cart: $var </a>";
+echo "<a class='navbar-brand' href='../../public/index.php'>Home </a>";
 include_once '../controller/seecartbutton.php';
 $buttonController = new ButtonController();
 $buttonController->ShowButton();

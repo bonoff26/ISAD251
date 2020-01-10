@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../../assets/css/landing.css">
 <link rel="stylesheet" href="../../assets/css/drinksmenu.css">
-<link rel="stylesheet" href="../assets/css/background.css">
+<link rel="stylesheet" href="../../assets/css/background.css">
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 
