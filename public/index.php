@@ -16,6 +16,6 @@ include_once "../assets/html/bootstrap.html";
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
     <div class="buttons">
         <a class="btn btn-secondary" id="1" href="../src/view/drinksmenu.php" role="button">Drinks Menu</a>
-        <a class="btn btn-secondary" id="2" href="#" role="button">Snacks Menu</a>
+        <a class="btn btn-secondary" id="2" href="../src/view/snacksmenu.php" role="button">Snacks Menu</a>
     </div>
 </div>

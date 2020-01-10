@@ -1,5 +1,5 @@
 <?php
-include_once "getDrinks.php";
+include_once "../../src/api/objects/Item.php";
 
 
 class DbContext
@@ -14,7 +14,12 @@ class DbContext
 
     public function __construct(PDO $connection = null)
     {
-        $this->connection = $connection;
+
+    }
+
+
+    public function connect() {
+        $this->connection = null;
         try {
             if ($this->connection === null){
                 $this->dataSourceName = 'mysql:dbname=' . $this->dbDatabase . ';host=' . $this->db_server;
@@ -24,32 +29,15 @@ class DbContext
                     PDO::ERRMODE_EXCEPTION
                 );
             }
+            return $this->connection;
         }
         catch (PDOException $err){
             echo "Connection failed ". $err->getMessage();
         }
     }
 
-    public function getInfo() {
-        $sql = "SELECT * FROM `menuitem`";
 
-        $statement = $this->connection->prepare($sql);
-        $statement->execute();
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-        $menuitems = [];
-
-        if ($results) {
-            foreach($results as $row)
-            {
-                $menuitem = new Item($row['MenuItemID'], $row['Name'], $row['Description'], $row['Quantity'], $row['Price']);
-                $menuitems[] = $menuitem;
-            }
-        }
-
-        return $menuitems;
-
-    }
 
     public function checkDB($array) {
         $items = $this->getInfo();

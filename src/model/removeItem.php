@@ -5,7 +5,13 @@ header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 
 function remove_from_cart ($product_id) {
-    $_SESSION['cart'][$product_id]--;
+    if ($_SESSION['cart'][$product_id] > 0) {
+        $_SESSION['cart'][$product_id]--;
+    }
+    if ($_SESSION['cart'][$product_id] == 0) {
+        unset($_SESSION['cart'][$product_id]);
+    }
+
 }
 
 $var = $_POST["remove_button"];

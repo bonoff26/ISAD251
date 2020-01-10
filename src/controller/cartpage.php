@@ -19,26 +19,35 @@ class CartPageController {
     }
 
     function showItems() {
-        $db = new DbContext();
-        $items = $db->getInfo();
+        $url="http://web.socem.plymouth.ac.uk/isad251/TAllenbrook/src/api/read.php";
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
-        if($items) {
-            foreach ($items as $item) {
-                //$_SESSION['TakeAction'] = $item->ID();
-                $optionString = "";
-                $optionString .= "<option value=" . $item->ID() . ">" . $item->Name() . ">" . $item->Quant() . ">" . $item->Desc() . ">" . $item->Price() . "</option>";
+        $auth = curl_exec($curl);
+        if($auth)
+        {
+            $json = json_decode($auth, true);
+        }
+        $newData = $json;
+        $db = new DbContext();
+
+        if($newData) {
+            for ($i=0; $i<count($newData['records']); $i++) {
 
                 $keys = array_keys($_SESSION['cart']);
                 $values = array_values($_SESSION['cart']);
                 $total = 0;
                 for ($i = 0; $i < count($keys); $i++) {
-                    if ($keys[$i] == $item->ID()) {
+                    if ($keys[$i] == $newData['records'][$i]['MenuItemID']) {
                         echo "<div class='card'>";
 
                         echo"<div class='card-body''>";
-                        echo"<h5 class='card-title'>"; echo $item->Name(); echo "</h5>";
+                        echo"<h5 class='card-title'>"; echo $newData['records'][$i]['Name']; echo "</h5>";
                         echo"<p class='card-text'>"; echo "Amount: " . $values[$i]; echo "</p>";
-                        $id = $item->ID();
+                        $id = $newData['records'][$i]['MenuItemID'];
                         echo "<form action='../model/addItem.php' method='post'>";
                         echo "<button name='action_button' class='btn btn-primary' type='submit' value='$id'>Add</button>";
                         echo "</form>";

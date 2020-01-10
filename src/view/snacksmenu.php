@@ -20,10 +20,10 @@ include_once "../../public/includes/sidebar.php";
 <?php
 include_once '../../src/api/objects/Item.php';
 include_once '../model/DbContext.php';
-include_once '../controller/drinksmenu.php';
+include_once '../controller/snacksmenu.php';
 //print_r($_SESSION);
 
-$drinkController = new Controller();
+$drinkController = new SnacksController();
 $drinkController->GetDbItems();
 
 ?>

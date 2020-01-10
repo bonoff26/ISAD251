@@ -9,7 +9,7 @@ include_once "../../assets/html/bootstrap.html";
 include_once '../../src/api/objects/Item.php';
 include_once '../model/DbContext.php';
 
-class Controller {
+class SnacksController {
 
     private $optionString;
     private $db;
@@ -40,7 +40,7 @@ class Controller {
             for ($i=0; $i<count($newData['records']); $i++) {
                 //$_SESSION['TakeAction'] = $item->ID();
 
-                if ($newData['records'][$i]['Quantity'] > 0 && $newData['records'][$i]['Type'] == "d") {
+                if ($newData['records'][$i]['Quantity'] > 0 && $newData['records'][$i]['Type'] == "f") {
                     echo "<div class='card' style='width: 18rem;'>";
 
                     echo"<div class='card-body''>";
@@ -56,7 +56,7 @@ class Controller {
                     echo"</div>";
                 }
 
-                else if ($newData['records'][$i]['Quantity'] <= 0 && $newData['records'][$i]['Type'] == 'd'){
+                else if ($newData['records'][$i]['Quantity'] <= 0 && $newData['records'][$i]['Type'] == 'f'){
                     echo "<div class='card' style='width: 18rem;'>";
 
                     echo"<div class='card-body''>";
@@ -75,10 +75,10 @@ class Controller {
 }
 
 
-    //$test = $_SESSION['test'];
+//$test = $_SESSION['test'];
 
-    //$num = count($_SESSION['cart']);
-    //echo "In Cart:  $num";
+//$num = count($_SESSION['cart']);
+//echo "In Cart:  $num";
 
 
 ?>
